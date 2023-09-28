@@ -1,6 +1,6 @@
 ---
 - name: Criar arquivo de texto
-  hosts: windows_hosts  # Substitua pelo nome do grupo de hosts do seu inventário
+  hosts: 192.168.0.114  # Substitua pelo nome do grupo de hosts do seu inventário
   tasks:
     - name: Criar arquivo de texto
       win_shell: |
