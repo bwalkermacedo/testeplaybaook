@@ -1,17 +1,36 @@
 ---
-- name: Baixar arquivos .exe do GitHub e executar
-  hosts: 192.168.0.114
+- name: Clone GitHub Repository
+  hosts: seu_host
+  become: yes  # Se você precisa de privilégios de administrador para clonar em um diretório protegido.
   tasks:
     - name: Clonar repositório do GitHub
       git:
         repo: https://github.com/bwalkermacedo/testeplaybaook.git
-        dest: /fortclient
+        dest: /home
+        clone: yes
+        update: yes  # Atualiza o repositório se ele já existe
+      vars:
+        GIT_ASKPASS: /bin/echo  # Evita solicitar interação do usuário
+      environment:
+        GIT_SSH_COMMAND: 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'  # Evita verificações de chave SSH
 
-    # - name: Copiar arquivo .exe para o host Windows
-    #   win_copy:
-    #     src: /testeplaybaook/FortiClientOnlineInstaller.exe
-    #     dest: C:\Users\admin\Desktop\
-    #     force: yes
+# Outras tarefas podem ser adicionadas abaixo para realizar ações após o clone.
 
-    # - name: Executar arquivo .exe
-    #   win_command: C:\Users\admin\Desktop\FortiClientOnlineInstaller.exe
+
+# ---
+# - name: Baixar arquivos .exe do GitHub e executar
+#   hosts: 192.168.0.114
+#   tasks:
+#     - name: Clonar repositório do GitHub
+#       git:
+#         repo: https://github.com/bwalkermacedo/testeplaybaook.git
+#         dest: /fortclient
+
+#     - name: Copiar arquivo .exe para o host Windows
+#       win_copy:
+#         src: /testeplaybaook/FortiClientOnlineInstaller.exe
+#         dest: C:\Users\admin\Desktop\
+#         force: yes
+
+#     - name: Executar arquivo .exe
+#       win_command: C:\Users\admin\Desktop\FortiClientOnlineInstaller.exe
