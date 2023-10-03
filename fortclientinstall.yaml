@@ -1,18 +1,13 @@
 ---
-- name: Clone GitHub Repository
+- name: Clone GitHub Repository on Windows
   hosts: 192.168.0.114
-  become: yes  # Se você precisa de privilégios de administrador para clonar em um diretório protegido.
   tasks:
-    - name: Clonar repositório do GitHub
-      git:
-        repo: https://github.com/bwalkermacedo/testeplaybaook.git
-        dest: /home
-        clone: yes
-        update: yes  # Atualiza o repositório se ele já existe
-      vars:
-        GIT_ASKPASS: /bin/echo  # Evita solicitar interação do usuário
-      environment:
-        GIT_SSH_COMMAND: 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'  # Evita verificações de chave SSH
+    - name: Clone GitHub Repository
+      win_shell: |
+        git clone https://github.com/bwalkermacedo/testeplaybaook.git C:\Users\admin\Desktop\
+      become: yes
+      become_user: admin  # Substitua pelo nome de usuário com privilégios de administrador
+
 
 # Outras tarefas podem ser adicionadas abaixo para realizar ações após o clone.
 
