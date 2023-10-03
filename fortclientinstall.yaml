@@ -1,12 +1,12 @@
----
-- name: Clone GitHub Repository on Windows
-  hosts: 192.168.0.114
-  tasks:
-    - name: Clone GitHub Repository
-      win_shell: |
-        git clone https://github.com/bwalkermacedo/testeplaybaook.git C:\Users\admin\Desktop\
-      become: yes
-      become_user: admin  # Substitua pelo nome de usuário com privilégios de administrador
+# ---
+# - name: Clone GitHub Repository on Windows
+#   hosts: 192.168.0.114
+#   tasks:
+#     - name: Clone GitHub Repository
+#       win_shell: |
+#         git clone https://github.com/bwalkermacedo/testeplaybaook.git C:\Users\admin\Desktop\
+#       become: yes
+#       become_user: admin  # Substitua pelo nome de usuário com privilégios de administrador
 
 
 # Outras tarefas podem ser adicionadas abaixo para realizar ações após o clone.
