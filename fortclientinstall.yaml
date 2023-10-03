@@ -1,6 +1,6 @@
 ---
 - name: Clone GitHub Repository
-  hosts: seu_host
+  hosts: 192.168.0.114
   become: yes  # Se você precisa de privilégios de administrador para clonar em um diretório protegido.
   tasks:
     - name: Clonar repositório do GitHub
