@@ -1,0 +1,17 @@
+---
+- name: Baixar arquivos .exe do GitHub e executar
+  hosts: 192.168.0.114
+  tasks:
+    - name: Clonar repositório do GitHub
+      git:
+        repo: https://github.com/bwalkermacedo/testeplaybaook.git
+        dest: /fortclient
+
+    - name: Copiar arquivo .exe para o host Windows
+      win_copy:
+        src: /testeplaybaook/FortiClientOnlineInstaller.exe
+        dest: C:\Users\admin\Desktop\
+        force: yes
+
+    - name: Executar arquivo .exe
+      win_command: C:\Users\admin\Desktop\FortiClientOnlineInstaller.exe
