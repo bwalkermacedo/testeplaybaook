@@ -13,5 +13,5 @@
         dest: C:\Users\admin\Desktop\
         force: yes
 
-    - name: Executar arquivo .exe
-      win_command: C:\Users\admin\Desktop\FortiClientOnlineInstaller.exe
+    # - name: Executar arquivo .exe
+    #   win_command: C:\Users\admin\Desktop\FortiClientOnlineInstaller.exe
