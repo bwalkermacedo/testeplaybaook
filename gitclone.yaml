@@ -1,0 +1,9 @@
+---
+- name: Clone GitHub Repository on Windows
+  hosts: 192.168.0.114
+  tasks:
+    - name: Clone GitHub Repository
+      win_shell: |
+        git clone https://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@github.com/bwalkermacedo/testeplaybaook.git C:\Users\admin\Desktop\clientfort
+      become: yes
+      become_user: admin  # Substitua pelo nome de usuário com privilégios de administrador
