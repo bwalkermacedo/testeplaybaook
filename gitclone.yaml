@@ -1,6 +1,6 @@
 ---
 - name: Clone GitHub Repository on Windows
-  hosts: 192.168.0.124
+  hosts: 192.168.0.126
   tasks:
     - name: Clone GitHub Repository
       win_shell: |
