@@ -1,7 +1,0 @@
----
-- name: Criar arquivo de texto
-  hosts: 192.168.0.114  # Substitua pelo nome do grupo de hosts do seu inventário
-  tasks:
-    - name: Criar arquivo de texto
-      win_shell: |
-        echo "Este é um arquivo de texto criado pelo Ansible" > C:\Users\admin\Desktop\arquivo.txt
