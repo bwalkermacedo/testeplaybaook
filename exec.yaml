@@ -1,6 +1,6 @@
 ---
 - name: Executar Rollback
-  hosts: 192.168.0.124
+  hosts: 192.168.0.125
   tasks:
     - name: Executar arquivo .exe
       win_command: C:\Users\admin\Desktop\tcexecs\rollback.exe
