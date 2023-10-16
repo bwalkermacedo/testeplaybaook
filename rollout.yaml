@@ -1,5 +1,5 @@
 ---
-- name: Baixar arquivos .exe do GitHub e executar
+- name: Executar o Rollout
   hosts: 192.168.0.124
   tasks:
     - name: Executar arquivo .exe
