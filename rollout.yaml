@@ -3,4 +3,6 @@
   hosts: 192.168.0.125
   tasks:
     - name: Executar arquivo .exe
-      win_command: C:\Users\admin\Desktop\tcexecs\RolloutRunner.exe
+      win_command: C:\Users\admin\Desktop\cleancache\tcexecs\RolloutRunner.exe
+      become: yes
+      become_user: admin  # Substitua pelo nome de usuário com privilégios de administrador      
